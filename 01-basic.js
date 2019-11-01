@@ -13,5 +13,5 @@ function main() {
 }
 
 function create() {
-    var text = this.add.text(50, 50, "Phaser is working!", { fontSize: '32px', fill: '#FFF' });
+    var text = this.add.text(200, 200, "Phaser is working!", { fontSize: '32px', fill: '#FFF' });
 }
