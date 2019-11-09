@@ -1,4 +1,21 @@
-  
+import { LoadScene } from "./scenes/LoadScene";
+import { MenuScene } from "./scenes/MenuScene";
+
+let game = new.Phaser.Game({
+
+    width: 1920,
+    height: 1080,
+    scene: [
+        LoadScene, MenuScene
+    ],
+    render: {
+        pixelArt: true
+    }
+
+});
+
+/*
+
 function main() {
 
     var config = {
@@ -17,7 +34,9 @@ function create() {
     var text = this.add.text(50, 50, "Phaser is working!", { fontSize: '32px', fill: '#FFF' });
 }
 
-/* 
+/*
+
+/*
 
 var game;
 
