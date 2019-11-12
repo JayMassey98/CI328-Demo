@@ -62,12 +62,12 @@ function preload() {
 
 function create() {
 
+    world = new World(game);
     input = new Input();
     ui = new UI();
     audio = new Audio();
 
-    this.add.image(0, 0, 'background_image').setOrigin(0, 0);
-    this.add.audio
+    // this.add.audio
 
     pauseGameForInput();
 
