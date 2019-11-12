@@ -18,6 +18,9 @@ function main() {
         // left block: width: 476 // (1920-968)/2
         // right block: width: 476 // (1920-968)/2
 
+        // needs to be scaleable based on current screen size
+        // centre block needs to always remain the same ratio
+
         scene: {
 
             preload: preload,
@@ -46,9 +49,9 @@ function preload() {
     game.score = 0;
 
     this.load.image('background_image', 'assets/images/background_image.png');
-    this.load.audio('intro_sound', 'assets/audio/intro_sound.mp3');
-    this.load.audio('continuous_audio', 'assets/audio/continuous_audio.mp3');
-    this.load.audio('button_interact', 'assets/audio/button_interact.mp3');
+    // this.load.audio('intro_sound', 'assets/audio/intro_sound.mp3');
+    // this.load.audio('continuous_audio', 'assets/audio/continuous_audio.mp3');
+    // this.load.audio('button_interact', 'assets/audio/button_interact.mp3');
 }
 
 /*
@@ -58,10 +61,12 @@ function preload() {
 
 function create() {
 
-    world = new World(game);
     input = new Input();
     ui = new UI();
     audio = new Audio();
+
+    this.add.image(0, 0, 'background_image').setOrigin(0, 0);
+    this.add.audio
 
     pauseGameForInput();
 
