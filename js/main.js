@@ -19,8 +19,8 @@ function main() {
 
         scene: {
 
-            load: load,
-            play: play,
+            loadScene: loadScene,
+            playScene: playScene,
         },
 
         pixelArt: true,
