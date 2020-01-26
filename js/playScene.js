@@ -242,21 +242,21 @@ class playScene extends Phaser.Scene {
 
         if (this.cursorKeys.left.isDown) {
         
-            this.player.setVelocityX(-gameSettings.playerSpeed);
+            this.player.setVelocityX(-config.playerSpeed);
             
         } else if (this.cursorKeys.right.isDown) {
         
-            this.player.setVelocityX(gameSettings.playerSpeed);
+            this.player.setVelocityX(config.playerSpeed);
             
         }
 
         if (this.cursorKeys.up.isDown) {
         
-            this.player.setVelocityY(-gameSettings.playerSpeed);
+            this.player.setVelocityY(-config.playerSpeed);
             
         } else if (this.cursorKeys.down.isDown) {
         
-            this.player.setVelocityY(gameSettings.playerSpeed);
+            this.player.setVelocityY(config.playerSpeed);
             
         }
     }
