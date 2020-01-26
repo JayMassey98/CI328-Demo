@@ -13,7 +13,14 @@ var config = {
     // type: Phaser.AUTO,
     width: 1920,
     height: 937,
-    scene: [bootScene, playScene],
+    
+    scene: {
+
+            bootScene: bootScene,
+            playScene: playScene
+
+        },
+    
     pixelArt: true,
         
     physics: {
