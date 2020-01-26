@@ -51,7 +51,7 @@ class playScene extends Phaser.Scene {
                 
             }
 
-            powerUp.setVelocity(gameSettings.powerUpVel, gameSettings.powerUpVel);
+            powerUp.setVelocity(config.powerUpVel, config.powerUpVel);
             powerUp.setCollideWorldBounds(true);
             powerUp.setBounce(1);
 
