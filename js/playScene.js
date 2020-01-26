@@ -8,12 +8,12 @@ class playScene extends Phaser.Scene {
 
     create() {
 
-        this.background = this.add.tileSprite(0, 0, main.config.width, main.config.height, "background");
+        this.background = main.add.tileSprite(0, 0, phaser.config.width, phaser.config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.ship1 = this.add.sprite(main.config.width / 2 - 50, main.config.height / 2, "ship");
-        this.ship2 = this.add.sprite(main.config.width / 2, main.config.height / 2, "ship2");
-        this.ship3 = this.add.sprite(main.config.width / 2 + 50, main.config.height / 2, "ship3");
+        this.ship1 = main.add.sprite(phaser.config.width / 2 - 50, phaser.config.height / 2, "ship");
+        this.ship2 = main.add.sprite(phaser.config.width / 2, phaser.config.height / 2, "ship2");
+        this.ship3 = main.add.sprite(phaser.config.width / 2 + 50, phaser.config.height / 2, "ship3");
 
         this.enemies = this.physics.add.group();
         this.enemies.add(this.ship1);
@@ -35,7 +35,7 @@ class playScene extends Phaser.Scene {
 
         this.powerUps = this.physics.add.group();
 
-        for (var i = 0; i < gameSettings.maxPowerups; i++) {
+        for (var i = 0; i < game.gameSettings.maxPowerups; i++) {
         
             var powerUp = this.physics.add.sprite(16, 16, "power_up");
             this.powerUps.add(powerUp);
