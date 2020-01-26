@@ -10,7 +10,7 @@ class playScene extends Phaser.Scene {
 
     create() {
 
-        // this.background = this.add.tileSprite(0, 0, this.config.width, this.config.height, "background");
+        this.background = this.add.tileSprite(0, 0, this.config.width, this.config.height, "background");
         this.background.setOrigin(0, 0);
 
         this.ship1 = this.add.sprite(this.config.width / 2 - 50, this.config.height / 2, "ship");
