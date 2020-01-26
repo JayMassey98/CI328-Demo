@@ -5,7 +5,7 @@ function main() {
     
     var gameSettings = {
     
-        playerSpeed: 200
+        playerSpeed: 200,
         maxPowerUps: 2,
         powerUpVelocity: 50
 
