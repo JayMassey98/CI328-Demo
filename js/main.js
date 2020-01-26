@@ -19,7 +19,7 @@ function main() {
 
         scene: {
 
-            loadScene: loadScene,
+            bootScene: bootScene,
             playScene: playScene,
         },
 
