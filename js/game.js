@@ -1,3 +1,6 @@
+let beam;
+let explosion;
+
 var config = {
 
     type: Phaser.AUTO,
@@ -23,5 +26,8 @@ var config = {
     powerUpVelocity: 50
     
 }
+
+beam = new Beam();
+explosion = new Explosion();
 
 var game = new Phaser.Game(config);
