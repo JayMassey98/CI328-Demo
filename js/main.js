@@ -1,4 +1,5 @@
 let game;
+let phaser;
 
 function main() {
 
