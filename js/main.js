@@ -16,13 +16,7 @@ function main() {
         type: Phaser.AUTO,
         width: 1920,
         height: 937,
-        scene: {[
-                
-            bootScene: bootScene,
-            playScene: playScene ]},
-        
         pixelArt: true,
-
         physics: {
 
             default: "arcade",
@@ -32,6 +26,11 @@ function main() {
                 debugShowVelocity: false
 
             }
+        },
+        
+        scene: {
+            bootScene: bootScene,
+            playScene: playScene
         }
     }
 
