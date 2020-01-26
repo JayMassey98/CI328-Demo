@@ -20,7 +20,8 @@ function main() {
         scene: {
 
             bootScene: bootScene,
-            playScene: playScene,
+            playScene: playScene
+            
         },
 
         pixelArt: true,
