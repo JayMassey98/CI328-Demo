@@ -27,7 +27,4 @@ var config = {
     
 }
 
-beam = new Beam();
-explosion = new Explosion();
-
 var game = new Phaser.Game(config);
