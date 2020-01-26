@@ -21,6 +21,7 @@ var config = {
     playerSpeed: 200,
     maxPowerUps: 2,
     powerUpVelocity: 50
+    
 }
 
 var game = new Phaser.Game(config);
