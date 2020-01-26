@@ -1,4 +1,4 @@
-let beam;
+// let beam;
 let explosion;
 
 var config = {
