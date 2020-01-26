@@ -16,8 +16,14 @@ function main() {
         type: Phaser.AUTO,
         width: 1920,
         height: 937,
-        scene: {bootScene, playScene},
         pixelArt: true,
+        
+        scene: {
+            
+            bootScene: bootScene,
+            playScene: playScene
+        
+        },
         
         physics: {
 
