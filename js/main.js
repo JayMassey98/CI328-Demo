@@ -29,8 +29,7 @@ function main() {
         },
         
         scene: {
-            bootScene: bootScene,
-            playScene: playScene
+            bootScene, playScene
         }
     }
 
