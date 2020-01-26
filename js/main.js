@@ -1,7 +1,4 @@
 let game;
-let phaser;
-
-function main() {
 
     var gameSettings = {
 
