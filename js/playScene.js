@@ -17,20 +17,46 @@ class playScene extends Phaser.Scene {
         this.ship1 = this.add.sprite(config.width / 2 - 50, config.height / 2, "ship");
         this.ship2 = this.add.sprite(config.width / 2, config.height / 2, "ship2");
         this.ship3 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship3");
+        
+        this.ship4 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 100, "ship4");
+        this.ship5 = this.add.sprite(config.width / 2, config.height / 2 - 100, "ship5");
+        this.ship6 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 100, "ship6");
+        
+        this.ship7 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 200, "ship7");
+        this.ship8 = this.add.sprite(config.width / 2, config.height / 2 - 200, "ship8");
+        this.ship9 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 200, "ship9");
 
         this.enemies = this.physics.add.group();
+        
         this.enemies.add(this.ship1);
         this.enemies.add(this.ship2);
         this.enemies.add(this.ship3);
-
+        this.enemies.add(this.ship4);
+        this.enemies.add(this.ship5);
+        this.enemies.add(this.ship6);
+        this.enemies.add(this.ship7);
+        this.enemies.add(this.ship8);
+        this.enemies.add(this.ship9);
 
         this.ship1.play("ship1_anim");
         this.ship2.play("ship2_anim");
         this.ship3.play("ship3_anim");
+        this.ship4.play("ship4_anim");
+        this.ship5.play("ship5_anim");
+        this.ship6.play("ship6_anim");
+        this.ship7.play("ship7_anim");
+        this.ship8.play("ship8_anim");
+        this.ship9.play("ship9_anim");
 
         this.ship1.setInteractive();
         this.ship2.setInteractive();
         this.ship3.setInteractive();
+        this.ship4.setInteractive();
+        this.ship5.setInteractive();
+        this.ship6.setInteractive();
+        this.ship7.setInteractive();
+        this.ship8.setInteractive();
+        this.ship9.setInteractive();
 
         this.input.on('gameobjectdown', this.destroyShip, this);
 
@@ -82,6 +108,7 @@ class playScene extends Phaser.Scene {
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
 
         var graphics = this.add.graphics();
+        
         graphics.fillStyle(0x000000, 1);
         graphics.beginPath();
         graphics.moveTo(0, 0);
@@ -152,6 +179,7 @@ class playScene extends Phaser.Scene {
     }
 
     resetPlayer() {
+        
         var x = config.width / 2 - 8;
         var y = config.height + 64;
         this.player.enableBody(true, x, y, true, true);
@@ -209,8 +237,14 @@ class playScene extends Phaser.Scene {
         this.moveShip(this.ship1, 1);
         this.moveShip(this.ship2, 2);
         this.moveShip(this.ship3, 3);
+        this.moveShip(this.ship4, 4);
+        this.moveShip(this.ship5, 5);
+        this.moveShip(this.ship6, 6);
+        this.moveShip(this.ship7, 7);
+        this.moveShip(this.ship8, 8);
+        this.moveShip(this.ship9, 9);
 
-        this.background.tilePositionY -= 0.5;
+        this.background.tilePositionY -= 1;
 
         this.movePlayerManager();
 
