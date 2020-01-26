@@ -9,7 +9,7 @@ function main() {
         maxPowerUps: 2,
         powerUpVelocity: 50
 
-    }
+    };
 
     var config = {
 
