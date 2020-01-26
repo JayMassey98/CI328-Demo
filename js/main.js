@@ -1,38 +1,42 @@
 let game;
 
-var gameSettings = {
-    
-    playerSpeed: 200,
-    maxPowerUps: 2,
-    powerUpVelocity: 50
+function main() {
 
-}
+    var gameSettings = {
 
-var config = {
+        playerSpeed: 200,
+        maxPowerUps: 2,
+        powerUpVelocity: 50
 
-    // type: Phaser.AUTO,
-    width: 1920,
-    height: 937,
-    
-    scene: {
+    }
 
-            bootScene: bootScene,
-            playScene: playScene
+    var config = {
 
-        },
-    
-    pixelArt: true,
-        
-    physics: {
-            
-        default: "arcade",
-        arcade: {
-                
-            debug: false,
-            debugShowVelocity: false
-            
+        // type: Phaser.AUTO,
+        width: 1920,
+        height: 937,
+
+        scene: {
+
+                bootScene: bootScene,
+                playScene: playScene
+
+            },
+
+        pixelArt: true,
+
+        physics: {
+
+            default: "arcade",
+            arcade: {
+
+                debug: false,
+                debugShowVelocity: false
+
+            }
         }
     }
-}
 
-game = new Phaser.Game(config);
+    game = new Phaser.Game(config);
+    
+}
