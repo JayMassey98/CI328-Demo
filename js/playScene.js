@@ -35,11 +35,11 @@ class playScene extends Phaser.Scene {
 
         this.powerUps = this.physics.add.group();
 
-        for (var i = 0; i < main.gameSettings.maxPowerups; i++) {
+        for (var i = 0; i < game.gameSettings.maxPowerups; i++) {
         
             var powerUp = this.physics.add.sprite(16, 16, "power_up");
             this.powerUps.add(powerUp);
-            powerUp.setRandomPosition(0, 0, main.config.width, main.config.height);
+            powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
 
             if (Math.random() > 0.5) {
             
