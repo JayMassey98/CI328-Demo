@@ -1,14 +1,7 @@
 {
   "name": "Light Beam",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "32x32 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "browser",
+  "start_url": "https://jaymassey98.github.io/CI328-Demo/"
 }
