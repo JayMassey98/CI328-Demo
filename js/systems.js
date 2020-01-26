@@ -1,72 +1,39 @@
-class Audio {
+class Beam extends Phaser.GameObjects.Sprite {
 
-    constructor() {
+    constructor(scene) {
 
-        this.intro = game.sound.add('intro');
-        this.intro.play();
+        var x = scene.player.x;
+        var y = scene.player.y - 16;
 
-        this.bg = game.sound.add('bg', true);
-        this.bg.play();
+        super(scene, x, y, "beam");
 
-        this.explode = game.sound.add('explode');
-        this.fly = game.sound.add('fly');
-        this.shoot = game.sound.add('shoot');
-    }
-}
+        scene.add.existing(this);
 
-class Input {
+        this.play("beam_anim");
+        scene.physics.world.enableBody(this);
+        this.body.velocity.y = - 250;
 
-    constructor() {
+        scene.projectiles.add(this);
 
-        this.keyMap = new Map();
-    }
-
-    add(key, action) {
-
-        this.keyMap.set(game.input.keyboard.addKey(key), action);
     }
 
     update() {
 
-        for (const [key, action] of this.keyMap.entries()) {
+        if (this.y < 0) {
 
-            if (key.isDown) {
+            this.destroy();
 
-                action();
-            }
         }
     }
 }
 
-class UI {
+class Explosion extends Phaser.GameObjects.Sprite {
 
-    constructor() {
-
-        this.startGameText = game.add.text(phaser.config.width / 2, phaser.config.height / 2, 'Click to Start', {
-            font: '30px Arial',
-            fill: '#fff'
-        });
-
-        this.startGameText.setOrigin(0.5, 0.5);
-
-        this.scoreText = game.add.text(10, 10, 'Score: 0', {
-            font: '34px Arial',
-            fill: '#fff'
-        });
-    }
-
-    updateScoreText(newScore) {
-
-        this.scoreText.setText('Score: ' + newScore);
-    }
-
-    showStartText() {
-
-        this.startGameText.visible = true;
-    }
-
-    disableStartText() {
-
-        this.startGameText.visible = false;
+    constructor(scene, x, y) {
+    
+        super(scene, x, y, "explosion");
+        scene.add.existing(this);
+        this.play("explode");
+        
     }
 }
