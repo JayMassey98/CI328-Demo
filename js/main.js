@@ -12,7 +12,7 @@ function main() {
 
     var config = {
 
-        // type: Phaser.AUTO,
+        type: Phaser.AUTO,
         width: 1920,
         height: 937,
         scene: [bootScene, playScene],
