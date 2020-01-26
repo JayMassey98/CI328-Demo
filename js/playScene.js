@@ -34,7 +34,7 @@ class playScene extends Phaser.Scene {
         this.physics.world.setBoundsCollision();
 
         this.powerUps = this.physics.add.group();
-
+     
         for (var i = 0; i < config.maxPowerUps; i++) {
         
             var powerUp = this.physics.add.sprite(16, 16, "power_up");
