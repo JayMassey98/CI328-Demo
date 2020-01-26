@@ -20,8 +20,8 @@ function main() {
         
         scene: {
             
-            bootScene: bootScene,
-            playScene: playScene
+            bootScene: "bootScene",
+            playScene: "playScene"
         
         },
         
