@@ -8,12 +8,12 @@ class playScene extends Phaser.Scene {
 
     create() {
 
-        this.background = main.add.tileSprite(0, 0, phaser.config.width, phaser.config.height, "background");
+        this.background = this.add.tileSprite(0, 0, this.config.width, this.config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.ship1 = main.add.sprite(phaser.config.width / 2 - 50, phaser.config.height / 2, "ship");
-        this.ship2 = main.add.sprite(phaser.config.width / 2, phaser.config.height / 2, "ship2");
-        this.ship3 = main.add.sprite(phaser.config.width / 2 + 50, phaser.config.height / 2, "ship3");
+        this.ship1 = this.add.sprite(this.config.width / 2 - 50, this.config.height / 2, "ship");
+        this.ship2 = this.add.sprite(this.config.width / 2, this.config.height / 2, "ship2");
+        this.ship3 = this.add.sprite(this.config.width / 2 + 50, this.config.height / 2, "ship3");
 
         this.enemies = this.physics.add.group();
         this.enemies.add(this.ship1);
