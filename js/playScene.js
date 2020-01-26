@@ -240,16 +240,6 @@ class playScene extends Phaser.Scene {
         this.moveShip(this.ship7, 7);
         this.moveShip(this.ship8, 8);
         this.moveShip(this.ship9, 9);
-        
-        this.ship1.destroy();
-        this.ship2.destroy();
-        this.ship3.destroy();
-        this.ship4.destroy();
-        this.ship5.destroy();
-        this.ship6.destroy();
-        this.ship7.destroy();
-        this.ship8.destroy();
-        this.ship9.destroy();
 
         this.background.tilePositionY -= 1;
 
