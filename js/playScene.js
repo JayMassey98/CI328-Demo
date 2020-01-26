@@ -8,7 +8,7 @@ class playScene extends Phaser.Scene {
 
     create() {
         
-        beam = new Beam();
+        beam = new Beam(this);
         explosion = new Explosion();
 
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
