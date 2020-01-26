@@ -1,8 +1,8 @@
-class BootScene extends Phaser.Scene {
+class bootScene extends Phaser.Scene {
 
     constructor() {
 
-        super("BootGame");
+        super("bootGame");
 
     }
 
@@ -64,7 +64,7 @@ class BootScene extends Phaser.Scene {
     create() {
 
         this.add.text(20, 20, "Loading...");
-        this.scene.start("PlayGame");
+        this.scene.start("playGame");
 
         this.anims.create({
         
