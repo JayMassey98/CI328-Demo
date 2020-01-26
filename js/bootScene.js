@@ -62,9 +62,6 @@ class bootScene extends Phaser.Scene {
     }
 
     create() {
-
-        beam = new Beam();
-        explosion = new Explosion();
         
         this.add.text(20, 20, "Loading...");
         this.scene.start("playGame");
