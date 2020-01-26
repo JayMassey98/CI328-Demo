@@ -5,8 +5,6 @@ class playScene extends Phaser.Scene {
         super("playGame");
 
     }
-    
-    width = 
 
     create() {
 
