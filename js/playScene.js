@@ -2,7 +2,7 @@ class PlayScene extends Phaser.Scene {
 
     constructor() {
 
-        super("bootGame");
+        super("playGame");
 
     }
 
