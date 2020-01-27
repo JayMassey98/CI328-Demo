@@ -24,7 +24,6 @@ class playScene extends Phaser.Scene {
         this.ship9 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship9");
 
         this.enemies = this.physics.add.group();
-        this.player = this.physics.add.group();
         
         this.enemies.add(this.ship1);
         this.enemies.add(this.ship2);
