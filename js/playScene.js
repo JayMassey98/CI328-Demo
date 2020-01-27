@@ -11,17 +11,17 @@ class playScene extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.ship1 = this.add.sprite(config.width / 2 - 50, config.height / 2, "ship");
-        this.ship2 = this.add.sprite(config.width / 2, config.height / 2, "ship2");
-        this.ship3 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship3");
+        this.ship1 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 200, "ship");
+        this.ship2 = this.add.sprite(config.width / 2, config.height / 2 - 200, "ship2");
+        this.ship3 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 200, "ship3");
         
         this.ship4 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 100, "ship4");
         this.ship5 = this.add.sprite(config.width / 2, config.height / 2 - 100, "ship5");
         this.ship6 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 100, "ship6");
         
-        this.ship7 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 200, "ship7");
-        this.ship8 = this.add.sprite(config.width / 2, config.height / 2 - 200, "ship8");
-        this.ship9 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 200, "ship9");
+        this.ship7 = this.add.sprite(config.width / 2 - 50, config.height / 2, "ship7");
+        this.ship8 = this.add.sprite(config.width / 2, config.height / 2, "ship8");
+        this.ship9 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship9");
 
         this.enemies = this.physics.add.group();
         
@@ -65,7 +65,7 @@ class playScene extends Phaser.Scene {
         
             var powerUp = this.physics.add.sprite(16, 16, "power_up");
             this.powerUps.add(powerUp);
-            powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
+            powerUp.setRandomPosition(0, 0, config.width, config.height);
 
             if (Math.random() > 0.5) {
             
@@ -99,7 +99,9 @@ class playScene extends Phaser.Scene {
         });
 
         this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
+
         this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
+
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
 
         var graphics = this.add.graphics();
@@ -116,8 +118,8 @@ class playScene extends Phaser.Scene {
         graphics.fillPath();
 
         this.score = 0;
-        var scoreFormated = this.zeroPad(this.score, 5);
-        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "CURRENT SCORE: " + scoreFormated, 16);
+        var scoreFormated = this.zeroPad(this.score, 6);
+        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE " + scoreFormated, 16);
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
