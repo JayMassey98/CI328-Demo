@@ -8,7 +8,7 @@ class bootScene extends Phaser.Scene {
 
     preload() {
         
-        this.add.text(20, 20, "Loading...");
+        this.add.text(30, 30, "Loading Game...");
 
         this.load.image("background", "assets/images/background.png");
         
