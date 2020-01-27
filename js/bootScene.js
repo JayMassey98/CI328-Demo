@@ -19,72 +19,63 @@ class bootScene extends Phaser.Scene {
         this.load.spritesheet("ship", "assets/spritesheets/ship.png", {
 
             frameWidth: 16,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship2", "assets/spritesheets/ship2.png", {
 
             frameWidth: 32,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship3", "assets/spritesheets/ship3.png", {
 
             frameWidth: 32,
-            frameHeight: 32,
-            this.scale.setTo(4, 4)
+            frameHeight: 32
             
         });
         
         this.load.spritesheet("ship4", "assets/spritesheets/ship4.png", {
 
             frameWidth: 16,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship5", "assets/spritesheets/ship5.png", {
 
             frameWidth: 32,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship6", "assets/spritesheets/ship6.png", {
 
             frameWidth: 32,
-            frameHeight: 32,
-            this.scale.setTo(4, 4)
+            frameHeight: 32
             
         });
         
         this.load.spritesheet("ship7", "assets/spritesheets/ship7.png", {
 
             frameWidth: 16,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship8", "assets/spritesheets/ship8.png", {
 
             frameWidth: 32,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("ship9", "assets/spritesheets/ship9.png", {
 
             frameWidth: 32,
-            frameHeight: 32,
-            this.scale.setTo(4, 4)
+            frameHeight: 32
             
         });
         
@@ -95,24 +86,21 @@ class bootScene extends Phaser.Scene {
         this.load.spritesheet("explosion", "assets/spritesheets/explosion.png", {
 
             frameWidth: 16,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
         this.load.spritesheet("player", "assets/spritesheets/player.png", {
 
             frameWidth: 16,
-            frameHeight: 24,
-            this.scale.setTo(4, 4)
+            frameHeight: 24
             
         });
 
         this.load.spritesheet("beam", "assets/spritesheets/beam.png", {
 
             frameWidth: 16,
-            frameHeight: 16,
-            this.scale.setTo(4, 4)
+            frameHeight: 16
             
         });
 
