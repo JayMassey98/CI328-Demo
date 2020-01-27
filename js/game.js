@@ -1,6 +1,3 @@
-// let beam;
-let explosion;
-
 var config = {
 
     type: Phaser.AUTO,
@@ -21,9 +18,9 @@ var config = {
         }
     },
     
-    playerSpeed: 200,
-    maxPowerUps: 2,
-    powerUpVelocity: 50
+    playerSpeed: 300,
+    maxPowerUps: 10,
+    powerUpVelocity: 100
     
 }
 
