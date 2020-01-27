@@ -140,6 +140,8 @@ class playScene extends Phaser.Scene {
 
     resetPlayer() {
         
+        this.score = 0;
+        
         var x = config.width / 2 - 8;
         var y = config.height + 64;
         this.player.enableBody(true, x, y, true, true);
