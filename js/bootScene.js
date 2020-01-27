@@ -91,6 +91,16 @@ class bootScene extends Phaser.Scene {
             frameWidth: 16,
             frameHeight: 16
         });
+        
+        ship1.scale.setTo(4, 4);
+        ship2.scale.setTo(4, 4);
+        ship3.scale.setTo(4, 4);
+        ship4.scale.setTo(4, 4);
+        ship5.scale.setTo(4, 4);
+        ship6.scale.setTo(4, 4);
+        ship7.scale.setTo(4, 4);
+        ship8.scale.setTo(4, 4);
+        ship9.scale.setTo(4, 4);
 
         this.load.bitmapFont("pixelFont", "assets/font/font.png", "assets/font/font.xml");
 
