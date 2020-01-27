@@ -59,49 +59,20 @@ class playScene extends Phaser.Scene {
 
         this.physics.world.setBoundsCollision();
 
-        this.powerUps = this.physics.add.group();
-     
-        for (var i = 0; i < config.maxPowerUps; i++) {
-        
-            var powerUp = this.physics.add.sprite(16, 16, "power_up");
-            this.powerUps.add(powerUp);
-            powerUp.setRandomPosition(0, 0, config.width, config.height);
-
-            if (Math.random() > 0.5) {
-            
-                powerUp.play("red");
-                
-            } else {
-            
-                powerUp.play("gray");
-                
-            }
-
-            powerUp.setVelocity(config.powerUpVel, config.powerUpVel);
-            powerUp.setCollideWorldBounds(true);
-            powerUp.setBounce(1);
-
-        }
-
         this.player = this.physics.add.sprite(config.width / 2 - 8, config.height - 64, "player");
         this.player.play("thrust");
         this.cursorKeys = this.input.keyboard.createCursorKeys();
         this.player.setCollideWorldBounds(true);
-
         this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
         this.projectiles = this.add.group();
 
-        this.physics.add.collider(this.projectiles, this.powerUps, function (projectile, powerUp) {
+        this.physics.add.collider(this.projectiles, function (projectile) {
         
             projectile.destroy();
             
         });
 
-        this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
-
         this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
-
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
 
         var graphics = this.add.graphics();
@@ -141,14 +112,6 @@ class playScene extends Phaser.Scene {
 
         this.music.play(musicConfig);
 
-    }
-
-    pickPowerUp(player, powerUp) {
-    
-        powerUp.disableBody(true, true);
-        
-        this.pickupSound.play();
-        
     }
 
     hurtPlayer(player, enemy) {
