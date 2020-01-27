@@ -12,8 +12,8 @@ var config = {
         default: "arcade",
         arcade: {
 
-            debug: false,
-            debugShowVelocity: false
+//            debug: false,
+//            debugShowVelocity: false
 
         }
     },
