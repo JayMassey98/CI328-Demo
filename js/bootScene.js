@@ -92,7 +92,7 @@ class bootScene extends Phaser.Scene {
             frameHeight: 16
         });
         
-        ship1.scale.setTo(4, 4);
+        ship.scale.setTo(4, 4);
         ship2.scale.setTo(4, 4);
         ship3.scale.setTo(4, 4);
         ship4.scale.setTo(4, 4);
