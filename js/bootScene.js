@@ -20,7 +20,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -28,7 +28,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -36,7 +36,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 32,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
         
@@ -44,7 +44,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -52,7 +52,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -60,7 +60,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 32,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
         
@@ -68,7 +68,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -76,7 +76,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -84,7 +84,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 32,
             frameHeight: 32,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
         
@@ -96,7 +96,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -104,7 +104,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 24,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
@@ -112,7 +112,7 @@ class bootScene extends Phaser.Scene {
 
             frameWidth: 16,
             frameHeight: 16,
-            scale.setTo(4, 4)
+            this.scale.setTo(4, 4)
             
         });
 
