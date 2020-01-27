@@ -237,6 +237,15 @@ class playScene extends Phaser.Scene {
     movePlayerManager() {
 
         this.player.setVelocity(0);
+        
+        this.cursors = this.input.keyboard.addKeys ({
+            
+            up:Phaser.Input.Keyboard.KeyCodes.W,
+            down:Phaser.Input.Keyboard.KeyCodes.S,
+            left:Phaser.Input.Keyboard.KeyCodes.A,
+            right:Phaser.Input.Keyboard.KeyCodes.D
+        
+        });
 
         if (this.cursorKeys.left.isDown) {
         
@@ -263,6 +272,7 @@ class playScene extends Phaser.Scene {
     moveShip(ship, speed) {
     
         ship.y += speed;
+        ship.x += Phaser.Math.Between(-0.5, 0.5);
         if (ship.y > config.height) {
         
             this.resetShipPos(ship);
