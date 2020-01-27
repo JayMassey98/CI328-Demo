@@ -90,7 +90,7 @@ class playScene extends Phaser.Scene {
 
         this.score = 0;
         var scoreFormated = this.zeroPad(this.score, 5);
-        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "CURRENT SCORE: " + scoreFormated, 16);
+        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE" + scoreFormated, 16);
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
