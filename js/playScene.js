@@ -10,6 +10,8 @@ class playScene extends Phaser.Scene {
 
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
+        
+        // Setting up Enemies
 
         this.ship1 = this.add.sprite(config.width / 2 - 150, config.height / 2 - 200, "ship");
         this.ship2 = this.add.sprite(config.width / 2, config.height / 2 - 200, "ship2");
@@ -54,26 +56,30 @@ class playScene extends Phaser.Scene {
         this.ship7.setInteractive();
         this.ship8.setInteractive();
         this.ship9.setInteractive();
-
-        this.input.on('gameobjectdown', this.destroyShip, this);
-
-        this.physics.world.setBoundsCollision();
-
+        
         this.player = this.physics.add.sprite(config.width / 2 - 8, config.height - 64, "player");
         this.player.play("thrust");
-        this.cursorKeys = this.input.keyboard.createCursorKeys();
         this.player.setCollideWorldBounds(true);
-        this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         this.projectiles = this.add.group();
-
-        this.physics.add.collider(this.projectiles, function (projectile) {
         
-            projectile.destroy();
-            
-        });
+        // Input
+        
+        this.input.on('gameobjectdown', this.destroyShip, this);
+        this.cursorKeys = this.input.keyboard.createCursorKeys();
+        this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        this.W = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
+        this.A = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        this.S = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+        this.D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        
+        // Physics
 
+        this.physics.world.setBoundsCollision();
+        this.physics.add.collider(this.projectiles, function (projectile) { projectile.destroy(); });
         this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
+        
+        // Graphics
 
         var graphics = this.add.graphics();
         
@@ -91,13 +97,13 @@ class playScene extends Phaser.Scene {
         this.score = 0;
         var scoreFormated = this.zeroPad(this.score, 6);
         this.scoreLabel = this.add.bitmapText(10, 6, "pixelFont", "SCORE" + scoreFormated, 16);
+        
+        // Sound
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
         this.pickupSound = this.sound.add("audio_pickup");
-
         this.music = this.sound.add("music");
-
         var musicConfig = {
         
             mute: false,
@@ -113,6 +119,23 @@ class playScene extends Phaser.Scene {
         this.music.play(musicConfig);
 
     }
+    
+    // Score Layout
+    
+    zeroPad(number, size) {
+    
+        var stringNumber = String(number);
+        while (stringNumber.length < (size || 2)) {
+        
+            stringNumber = "0" + stringNumber;
+            
+        }
+        
+        return stringNumber;
+        
+    }
+    
+    // Player Functions
 
     hurtPlayer(player, enemy) {
 
@@ -179,20 +202,7 @@ class playScene extends Phaser.Scene {
         this.explosionSound.play();
         
     }
-
-    zeroPad(number, size) {
     
-        var stringNumber = String(number);
-        while (stringNumber.length < (size || 2)) {
-        
-            stringNumber = "0" + stringNumber;
-            
-        }
-        
-        return stringNumber;
-        
-    }
-
     update() {
 
         this.moveShip(this.ship1, 3 * ((this.score / 150) + 1));
@@ -238,37 +248,35 @@ class playScene extends Phaser.Scene {
 
         this.player.setVelocity(0);
 
-        if (this.cursorKeys.left.isDown) {
+        if (this.cursorKeys.left.isDown || Phaser.Input.Keyboard.JustDown(this.A)) {
         
             this.player.setVelocityX(-config.playerSpeed);
             
-        } else if (this.cursorKeys.right.isDown) {
+        } else if (this.cursorKeys.right.isDown || Phaser.Input.Keyboard.JustDown(this.D)) {
         
             this.player.setVelocityX(config.playerSpeed);
             
         }
 
-        if (this.cursorKeys.up.isDown) {
+        if (this.cursorKeys.up.isDown || Phaser.Input.Keyboard.JustDown(this.W)) {
         
             this.player.setVelocityY(-config.playerSpeed);
             
-        } else if (this.cursorKeys.down.isDown) {
+        } else if (this.cursorKeys.down.isDown || Phaser.Input.Keyboard.JustDown(this.S)) {
         
             this.player.setVelocityY(config.playerSpeed);
             
         }
         
     }
+    
+    // Ship Functions
 
     moveShip(ship, speed) {
     
         ship.y += speed;
         ship.x += ((Phaser.Math.Between(-1, 1) * (speed - 3)) / 4);
-        if (ship.y > config.height) {
-        
-            this.resetShipPos(ship);
-            
-        }
+        if (ship.y > config.height) { this.resetShipPos(ship); }
         
     }
 
