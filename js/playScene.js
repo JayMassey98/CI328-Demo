@@ -263,7 +263,7 @@ class playScene extends Phaser.Scene {
     moveShip(ship, speed) {
     
         ship.y += speed;
-        ship.x += Phaser.Math.Between(-1, 1);
+        ship.x += Phaser.Math.Between(-4, 4);
         if (ship.y > config.height) {
         
             this.resetShipPos(ship);
