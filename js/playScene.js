@@ -195,17 +195,17 @@ class playScene extends Phaser.Scene {
 
     update() {
 
-        this.moveShip(this.ship1, 2 * ((this.score / 15) + 1));
-        this.moveShip(this.ship2, 2 * ((this.score / 15) + 1));
-        this.moveShip(this.ship3, 2 * ((this.score / 15) + 1));
-        this.moveShip(this.ship4, 3 * ((this.score / 15) + 1));
-        this.moveShip(this.ship5, 3 * ((this.score / 15) + 1));
-        this.moveShip(this.ship6, 3 * ((this.score / 15) + 1));
-        this.moveShip(this.ship7, 4 * ((this.score / 15) + 1));
-        this.moveShip(this.ship8, 4 * ((this.score / 15) + 1));
-        this.moveShip(this.ship9, 4 * ((this.score / 15) + 1));
+        this.moveShip(this.ship1, 1 * ((this.score / 150) + 1));
+        this.moveShip(this.ship2, 1 * ((this.score / 150) + 1));
+        this.moveShip(this.ship3, 1 * ((this.score / 150) + 1));
+        this.moveShip(this.ship4, 2 * ((this.score / 150) + 1));
+        this.moveShip(this.ship5, 2 * ((this.score / 150) + 1));
+        this.moveShip(this.ship6, 2 * ((this.score / 150) + 1));
+        this.moveShip(this.ship7, 3 * ((this.score / 150) + 1));
+        this.moveShip(this.ship8, 3 * ((this.score / 150) + 1));
+        this.moveShip(this.ship9, 3 * ((this.score / 150) + 1));
 
-        this.background.tilePositionY -= 1;
+        this.background.tilePositionY -= 1 * ((this.score / 150) + 1);
 
         this.movePlayerManager();
 
