@@ -248,21 +248,21 @@ class playScene extends Phaser.Scene {
 
         this.player.setVelocity(0);
 
-        if (this.cursorKeys.left.isDown || Phaser.Input.Keyboard.JustDown(this.A)) {
+        if (this.cursorKeys.left.isDown || Phaser.Input.Keyboard.isDown(this.A)) {
         
             this.player.setVelocityX(-config.playerSpeed);
             
-        } else if (this.cursorKeys.right.isDown || Phaser.Input.Keyboard.JustDown(this.D)) {
+        } else if (this.cursorKeys.right.isDown || Phaser.Input.Keyboard.isDown(this.D)) {
         
             this.player.setVelocityX(config.playerSpeed);
             
         }
 
-        if (this.cursorKeys.up.isDown || Phaser.Input.Keyboard.JustDown(this.W)) {
+        if (this.cursorKeys.up.isDown || Phaser.Input.Keyboard.isDown(this.W)) {
         
             this.player.setVelocityY(-config.playerSpeed);
             
-        } else if (this.cursorKeys.down.isDown || Phaser.Input.Keyboard.JustDown(this.S)) {
+        } else if (this.cursorKeys.down.isDown || Phaser.Input.Keyboard.isDown(this.S)) {
         
             this.player.setVelocityY(config.playerSpeed);
             
