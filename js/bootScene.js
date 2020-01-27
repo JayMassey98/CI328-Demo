@@ -7,6 +7,8 @@ class bootScene extends Phaser.Scene {
     }
 
     preload() {
+        
+        this.add.text(20, 20, "Loading...");
 
         this.load.image("background", "assets/images/background.png");
         
@@ -100,7 +102,6 @@ class bootScene extends Phaser.Scene {
 
     create() {
         
-        this.add.text(20, 20, "Loading...");
         this.scene.start("playGame");
 
         this.anims.create({
