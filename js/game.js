@@ -5,18 +5,8 @@ var config = {
     height: 937,
     backgroundColor: 0x000000,
     scene: [bootScene, playScene],
+    physics: {default: "arcade"},
     pixelArt: true,
-    
-    physics: {
-
-        default: "arcade",
-        arcade: {
-
-//            debug: false,
-//            debugShowVelocity: false
-
-        }
-    },
     
     playerSpeed: 300,
     maxPowerUps: 10,
