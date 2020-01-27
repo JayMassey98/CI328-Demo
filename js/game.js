@@ -7,10 +7,7 @@ var config = {
     scene: [bootScene, playScene],
     physics: {default: "arcade"},
     pixelArt: true,
-    
-    playerSpeed: 300,
-    maxPowerUps: 10,
-    powerUpVelocity: 100
+    playerSpeed: 300
     
 }
 
