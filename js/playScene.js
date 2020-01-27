@@ -11,13 +11,13 @@ class playScene extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.ship1 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 200, "ship");
+        this.ship1 = this.add.sprite(config.width / 2 - 150, config.height / 2 - 200, "ship");
         this.ship2 = this.add.sprite(config.width / 2, config.height / 2 - 200, "ship2");
-        this.ship3 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 200, "ship3");
+        this.ship3 = this.add.sprite(config.width / 2 + 150, config.height / 2 - 200, "ship3");
         
-        this.ship4 = this.add.sprite(config.width / 2 - 50, config.height / 2 - 100, "ship4");
+        this.ship4 = this.add.sprite(config.width / 2 - 100, config.height / 2 - 100, "ship4");
         this.ship5 = this.add.sprite(config.width / 2, config.height / 2 - 100, "ship5");
-        this.ship6 = this.add.sprite(config.width / 2 + 50, config.height / 2 - 100, "ship6");
+        this.ship6 = this.add.sprite(config.width / 2 + 100, config.height / 2 - 100, "ship6");
         
         this.ship7 = this.add.sprite(config.width / 2 - 50, config.height / 2, "ship7");
         this.ship8 = this.add.sprite(config.width / 2, config.height / 2, "ship8");
@@ -89,8 +89,8 @@ class playScene extends Phaser.Scene {
         graphics.fillPath();
 
         this.score = 0;
-        var scoreFormated = this.zeroPad(this.score, 5);
-        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE" + scoreFormated, 16);
+        var scoreFormated = this.zeroPad(this.score, 6);
+        this.scoreLabel = this.add.bitmapText(10, 6, "pixelFont", "SCORE" + scoreFormated, 16);
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
@@ -180,7 +180,6 @@ class playScene extends Phaser.Scene {
         
     }
 
-
     zeroPad(number, size) {
     
         var stringNumber = String(number);
@@ -196,15 +195,15 @@ class playScene extends Phaser.Scene {
 
     update() {
 
-        this.moveShip(this.ship1, 1);
-        this.moveShip(this.ship2, 2);
-        this.moveShip(this.ship3, 3);
-        this.moveShip(this.ship4, 4);
-        this.moveShip(this.ship5, 5);
-        this.moveShip(this.ship6, 6);
-        this.moveShip(this.ship7, 7);
-        this.moveShip(this.ship8, 8);
-        this.moveShip(this.ship9, 9);
+        this.moveShip(this.ship1, 2 * ((this.score / 15) + 1));
+        this.moveShip(this.ship2, 2 * ((this.score / 15) + 1));
+        this.moveShip(this.ship3, 2 * ((this.score / 15) + 1));
+        this.moveShip(this.ship4, 3 * ((this.score / 15) + 1));
+        this.moveShip(this.ship5, 3 * ((this.score / 15) + 1));
+        this.moveShip(this.ship6, 3 * ((this.score / 15) + 1));
+        this.moveShip(this.ship7, 4 * ((this.score / 15) + 1));
+        this.moveShip(this.ship8, 4 * ((this.score / 15) + 1));
+        this.moveShip(this.ship9, 4 * ((this.score / 15) + 1));
 
         this.background.tilePositionY -= 1;
 
@@ -232,6 +231,7 @@ class playScene extends Phaser.Scene {
     
         var beam = new Beam(this);
         this.beamSound.play();
+        
     }
 
     movePlayerManager() {
@@ -257,6 +257,7 @@ class playScene extends Phaser.Scene {
             this.player.setVelocityY(config.playerSpeed);
             
         }
+        
     }
 
     moveShip(ship, speed) {
@@ -267,6 +268,7 @@ class playScene extends Phaser.Scene {
             this.resetShipPos(ship);
             
         }
+        
     }
 
     resetShipPos(ship) {
@@ -283,4 +285,5 @@ class playScene extends Phaser.Scene {
         gameObject.play("explode");
         
     }
+    
 }
