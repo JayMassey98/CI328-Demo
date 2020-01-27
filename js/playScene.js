@@ -23,15 +23,15 @@ class playScene extends Phaser.Scene {
         this.ship8 = this.add.sprite(config.width / 2, config.height / 2, "ship8");
         this.ship9 = this.add.sprite(config.width / 2 + 50, config.height / 2, "ship9");
         
-        ship1.scale.setTo(4, 4);
-        ship2.scale.setTo(4, 4);
-        ship3.scale.setTo(4, 4);
-        ship4.scale.setTo(4, 4);
-        ship5.scale.setTo(4, 4);
-        ship6.scale.setTo(4, 4);
-        ship7.scale.setTo(4, 4);
-        ship8.scale.setTo(4, 4);
-        ship9.scale.setTo(4, 4);
+        this.ship1.scale.setTo(4, 4);
+        this.ship2.scale.setTo(4, 4);
+        this.ship3.scale.setTo(4, 4);
+        this.ship4.scale.setTo(4, 4);
+        this.ship5.scale.setTo(4, 4);
+        this.ship6.scale.setTo(4, 4);
+        this.ship7.scale.setTo(4, 4);
+        this.ship8.scale.setTo(4, 4);
+        this.ship9.scale.setTo(4, 4);
 
         this.enemies = this.physics.add.group();
         
