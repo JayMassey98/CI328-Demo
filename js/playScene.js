@@ -99,9 +99,7 @@ class playScene extends Phaser.Scene {
         });
 
         this.physics.add.overlap(this.player, this.powerUps, this.pickPowerUp, null, this);
-
         this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
-
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
 
         var graphics = this.add.graphics();
@@ -118,8 +116,8 @@ class playScene extends Phaser.Scene {
         graphics.fillPath();
 
         this.score = 0;
-        var scoreFormated = this.zeroPad(this.score, 6);
-        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "SCORE " + scoreFormated, 16);
+        var scoreFormated = this.zeroPad(this.score, 5);
+        this.scoreLabel = this.add.bitmapText(10, 5, "pixelFont", "CURRENT SCORE: " + scoreFormated, 16);
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
