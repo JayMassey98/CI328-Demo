@@ -1,4 +1,17 @@
-class Beam extends Phaser.GameObjects.Sprite {
+class Systems extends Phaser.GameObjects.Sprite {
+    
+    constructor(scene, x, y, key, type) {
+        
+        super(scene, x, y, key);
+        this.scene = scene;
+        this.scene.add.existing(this);
+        this.scene.physics.world.enableBody(this, 0);
+        this.setData("type", type);
+    }
+    
+}
+
+class Beam extends Systems {
 
     constructor(scene) {
 
@@ -27,7 +40,7 @@ class Beam extends Phaser.GameObjects.Sprite {
     }
 }
 
-class Explosion extends Phaser.GameObjects.Sprite {
+class Explosion extends Systems {
 
     constructor(scene, x, y) {
     
@@ -38,7 +51,7 @@ class Explosion extends Phaser.GameObjects.Sprite {
     }
 }
 
-class Power1 extends Phaser.GameObjects.Sprite {
+class Power1 extends Systems {
     
     constructor(scene, x, y) {
         
@@ -55,7 +68,7 @@ class Power1 extends Phaser.GameObjects.Sprite {
     }
 }
 
-class Power2 extends Phaser.GameObjects.Sprite {
+class Power2 extends Systems {
     
     constructor(scene, x, y) {
         
