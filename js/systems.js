@@ -50,37 +50,3 @@ class Explosion extends Systems {
         
     }
 }
-
-class Power1 extends Systems {
-    
-    constructor(scene, x, y) {
-        
-        super(scene, x, y, "power_1", "Power1");
-        this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power_1");
-    }
-
-    update() {
-
-        if(this.x < 0 ) {
-            this.destroy();
-        }
-    }
-}
-
-class Power2 extends Systems {
-    
-    constructor(scene, x, y) {
-        
-        super(scene, x, y, "power_2", "Power2");
-        this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power_2");
-    }
-
-    update() {
-
-        if(this.x < 0 ) {
-            this.destroy();
-        }
-    }
-}
