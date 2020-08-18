@@ -25,6 +25,7 @@ class options extends Phaser.Scene {
         this.enemyDown.setInteractive();
         
         this.title = this.add.text(0,0, "Option", {
+            
             fontFamily: 'monospace',
             fontSize: 40,
             fontStyle: 'bold',
