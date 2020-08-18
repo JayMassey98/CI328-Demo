@@ -55,9 +55,9 @@ class Power1 extends Systems {
     
     constructor(scene, x, y) {
         
-        super(scene, x, y, "power1");
+        super(scene, x, y, "power_1");
         this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power1");
+        this.play("power_1");
     }
 
     update() {
@@ -72,9 +72,9 @@ class Power2 extends Systems {
     
     constructor(scene, x, y) {
         
-        super(scene, x, y, "power2");
+        super(scene, x, y, "power_2");
         this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power2");
+        this.play("power_2");
     }
 
     update() {
