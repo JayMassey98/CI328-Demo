@@ -2,7 +2,7 @@ class playScene extends Phaser.Scene {
 
     constructor() {
 
-        super("playGame");
+        super("playScene");
 
     }
 
@@ -10,6 +10,19 @@ class playScene extends Phaser.Scene {
 
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
+        
+        // Lives
+        
+        this.life = 5;
+        this.lifeText = this.add.text(config.width / 2, 0, "LIFE: 5", {
+            
+            fontFamily: 'monospace',
+            fontSize: 24,
+            fontStyle: 'bold',
+            color: '#ffffff',
+            align: 'center'
+            
+        });
         
         // Setting up Enemies
 
@@ -117,6 +130,30 @@ class playScene extends Phaser.Scene {
         }
 
         this.music.play(musicConfig);
+        
+        // Power Ups
+        
+        this.time.addEvent({
+        
+            delay: config.powerUpSpawn,
+        
+            callback: function() {
+                
+                if (Phaser.Math.Between(0, 1) > 0.5) {
+                    
+                    var powerUp = new power_1(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));  
+                }
+                else {
+                    
+                    var powerUp = new power_2(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));
+                }
+                this.powerUp.add(powerUp);
+            },
+        
+            callbackScope: this,
+            loop: true
+            
+        });
 
     }
     
@@ -140,6 +177,8 @@ class playScene extends Phaser.Scene {
     hurtPlayer(player, enemy) {
 
         this.resetShipPos(enemy);
+        this.life -= 1;
+        this.lifeText.setText("LIFE: " + this.life);
 
         if (this.player.alpha < 1) {
         
@@ -159,6 +198,13 @@ class playScene extends Phaser.Scene {
             loop: false
             
         });
+    }
+    
+    pickUp (player, powerUp) {
+        
+        powerUp.destroy();
+        this.score += 50;
+        this.scoreText.setText("SCORE: " + this.score);
     }
 
     resetPlayer() {
@@ -202,6 +248,7 @@ class playScene extends Phaser.Scene {
         this.explosionSound.play();
         
     }
+
     
     update() {
 
@@ -234,6 +281,8 @@ class playScene extends Phaser.Scene {
             beam.update();
             
         }
+        
+        this.noLives();
 
     }
 
@@ -293,6 +342,15 @@ class playScene extends Phaser.Scene {
         gameObject.setTexture("explosion");
         gameObject.play("explode");
         
+    }
+
+    outOfLife() {
+        
+        if(this.life == 0){
+            this.backgroundMusic.pause();
+            this.scene.pause();
+            this.scene.start("endScene");   
+        }   
     }
     
 }
