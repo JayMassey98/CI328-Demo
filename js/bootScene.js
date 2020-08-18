@@ -11,6 +11,7 @@ class bootScene extends Phaser.Scene {
         this.add.text(30, 30, "Loading Game...");
 
         this.load.image("background", "assets/images/background.png");
+        this.load.image("lightBeam", "assets/images/lightBeam.png");
         this.load.image("buttonPlay", "assets/images/buttonPlay.png");
         this.load.image("buttonOptions", "assets/images/buttonOptions.png");
         
