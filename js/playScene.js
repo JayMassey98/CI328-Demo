@@ -105,7 +105,7 @@ class playScene extends Phaser.Scene {
         this.scoreText = this.add.text(30, 30, "SCORE: 0", {
             
             fontFamily: 'monospace',
-            fontSize: 20,
+            fontSize: 24,
             fontStyle: 'bold',
             color: '#ffffff',
             align: 'center'
