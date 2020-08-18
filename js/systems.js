@@ -37,3 +37,37 @@ class Explosion extends Phaser.GameObjects.Sprite {
         
     }
 }
+
+class Power1 extends Phaser.GameObjects.Sprite {
+    
+    constructor(scene, x, y) {
+        
+        super(scene, x, y, "power_1", "power_1");
+        this.body.velocity.x = Phaser.Math.Between(-50, -100);
+        this.play("power_1");
+    }
+
+    update() {
+
+        if(this.x < 0 ) {
+            this.destroy();
+        }
+    }
+}
+
+class Power2 extends Phaser.GameObjects.Sprite {
+    
+    constructor(scene, x, y) {
+        
+        super(scene, x, y, "power_2", "power_2");
+        this.body.velocity.x = Phaser.Math.Between(-50, -100);
+        this.play("power_2");
+    }
+
+    update() {
+
+        if(this.x < 0 ) {
+            this.destroy();
+        }
+    }
+}
