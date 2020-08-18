@@ -219,14 +219,9 @@ class playScene extends Phaser.Scene {
         projectile.destroy();
         this.resetShipPos(enemy);
         this.score += 15;
-
-        var scoreFormated = this.zeroPad(this.score, 6);
-        this.scoreLabel.text = "SCORE " + scoreFormated;
-
         this.explosionSound.play();
         
     }
-
     
     update() {
 
