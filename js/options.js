@@ -10,34 +10,35 @@ class options extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.playButton = this.add.sprite(config.width / 2, config.height / 2, "button");
+        this.buttonBack = this.add.sprite(config.width / 2, config.height / 2, "buttonBack");
 
-        this.attackUp = this.add.sprite(config.width, config.height / 2, "button");
-        this.attackDown = this.add.sprite(0, config.height / 2, "button");
+        this.buttonAttackUp = this.add.sprite(config.width, config.height / 2, "buttonAttackUp");
+        this.buttonAttackDown = this.add.sprite(0, config.height / 2, "buttonAttackDown");
 
-        this.enemyUp = this.add.sprite(config.width, config.height/3, "button");
-        this.enemyDown = this.add.sprite(0, config.height / 3, "button");
+        this.buttonEnemyUp = this.add.sprite(config.width, config.height/3, "buttonEnemyUp");
+        this.buttonEnemyDown = this.add.sprite(0, config.height / 3, "buttonEnemyDown");
 
-        this.playButton.setInteractive();
-        this.attackUp.setInteractive();
-        this.attackDown.setInteractive();
-        this.enemyUp.setInteractive();
-        this.enemyDown.setInteractive();
+        this.buttonBack.setInteractive();
+        this.buttonAttackUp.setInteractive();
+        this.buttonAttackDown.setInteractive();
+        this.buttonEnemyUp.setInteractive();
+        this.buttonEnemyDown.setInteractive();
         
-        this.title = this.add.text(0, 0, "Option", {
+        this.title = this.add.text(30, 30, "Options", {
             
             fontFamily: 'monospace',
             fontSize: 40,
             fontStyle: 'bold',
             color: '#ffffff',
             align: 'center'
+            
         });
         
-        this.title.setOrigin(0,0);
+        this.title.setOrigin(0, 0);
 
         // Start Game
         
-        this.playButton.on("pointerup", function() {this.scene.start("menu"); }, this);
+        this.backButton.on("pointerup", function() {this.scene.start("menu"); }, this);
 
         // Player Attacks
         
