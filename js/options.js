@@ -24,7 +24,7 @@ class options extends Phaser.Scene {
         this.enemyUp.setInteractive();
         this.enemyDown.setInteractive();
         
-        this.title = this.add.text(0,0, "Option", {
+        this.title = this.add.text(0, 0, "Option", {
             
             fontFamily: 'monospace',
             fontSize: 40,
@@ -45,7 +45,7 @@ class options extends Phaser.Scene {
 
         this.attackDown.on("pointerup", function() {
             
-            if(config.bulletTime > 100 ){
+            if(config.bulletTime > 100) {
                 
                 config.bulletTime -= 100;
             }
@@ -58,7 +58,7 @@ class options extends Phaser.Scene {
 
         this.enemyDown.on("pointerup", function() {
             
-            if(config.enemySpawn > 100 ){
+            if(config.enemySpawn > 100) {
                 
                 config.enemySpawn -= 100;
             }
