@@ -24,7 +24,7 @@ class options extends Phaser.Scene {
         this.buttonEnemyUp.setInteractive();
         this.buttonEnemyDown.setInteractive();
         
-        this.buttonBack.scale.setTo(2, 2);
+        this.buttonBack.setScale(2, 2);
         
         this.title = this.add.text(config.width / 2, 30, "Options", {
             
