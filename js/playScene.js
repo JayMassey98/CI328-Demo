@@ -11,19 +11,6 @@ class playScene extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
         
-        // Lives
-        
-        this.life = 5;
-        this.lifeText = this.add.text(config.width / 2, 0, "LIFE: 5", {
-            
-            fontFamily: 'monospace',
-            fontSize: 24,
-            fontStyle: 'bold',
-            color: '#ffffff',
-            align: 'center'
-            
-        });
-        
         // Setting up Enemies
 
         this.ship1 = this.add.sprite(config.width / 2 - 150, config.height / 2 - 200, "ship");
@@ -92,25 +79,6 @@ class playScene extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.enemies, this.hurtPlayer, null, this);
         this.physics.add.overlap(this.projectiles, this.enemies, this.hitEnemy, null, this);
         
-        // Graphics
-
-        var graphics = this.add.graphics();
-        
-        graphics.fillStyle(0x000000, 1);
-        graphics.beginPath();
-        graphics.moveTo(0, 0);
-        graphics.lineTo(config.width, 0);
-        graphics.lineTo(config.width, 20);
-        graphics.lineTo(0, 20);
-        graphics.lineTo(0, 0);
-
-        graphics.closePath();
-        graphics.fillPath();
-
-        this.score = 0;
-        var scoreFormated = this.zeroPad(this.score, 6);
-        this.scoreLabel = this.add.bitmapText(10, 6, "pixelFont", "SCORE" + scoreFormated, 16);
-        
         // Sound
 
         this.beamSound = this.sound.add("audio_beam");
@@ -130,6 +98,31 @@ class playScene extends Phaser.Scene {
         }
 
         this.music.play(musicConfig);
+        
+        // Score
+        
+        this.score = 0;
+        this.scoreText = this.add.text(30, 30, "SCORE: 0", {
+            
+            fontFamily: 'monospace',
+            fontSize: 20,
+            fontStyle: 'bold',
+            color: '#ffffff',
+            align: 'center'
+        });
+        
+        // Lives
+        
+        this.life = 5;
+        this.lifeText = this.add.text(config.width / 2, 30, "LIFE: 5", {
+            
+            fontFamily: 'monospace',
+            fontSize: 24,
+            fontStyle: 'bold',
+            color: '#ffffff',
+            align: 'center'
+            
+        });
         
         // Power Ups
         
@@ -155,21 +148,6 @@ class playScene extends Phaser.Scene {
             
         });
 
-    }
-    
-    // Score Layout
-    
-    zeroPad(number, size) {
-    
-        var stringNumber = String(number);
-        while (stringNumber.length < (size || 2)) {
-        
-            stringNumber = "0" + stringNumber;
-            
-        }
-        
-        return stringNumber;
-        
     }
     
     // Player Functions
