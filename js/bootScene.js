@@ -11,6 +11,8 @@ class bootScene extends Phaser.Scene {
         this.add.text(30, 30, "Loading Game...");
 
         this.load.image("background", "assets/images/background.png");
+        this.load.image("button", "assets/images/button.png");
+        this.load.image("buttonRestart", "assets/images/buttonRestart.png");
         
         //
         // Enemy Ship Sprites
@@ -224,5 +226,31 @@ class bootScene extends Phaser.Scene {
             repeat: -1
             
         });
+        
+        this.anims.create({
+        
+            key: "power_1",
+            frames: this.anims.generateFrameNumbers("powerup", {
+                start: 0,
+                end: 1
+            }),
+            frameRate: 20,
+            repeat: -1
+            
+        });
+        
+        this.anims.create({
+        
+            key: "power_2",
+            frames: this.anims.generateFrameNumbers("powerup", {
+                start: 0,
+                end: 1
+            }),
+            frameRate: 20,
+            repeat: -1
+            
+        });
+        
+        this.scene.start("menu");
     }
 }
