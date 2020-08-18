@@ -123,32 +123,6 @@ class playScene extends Phaser.Scene {
             align: 'center'
             
         });
-        
-         // Power Ups
-        
-        this.powerUp = this.add.group();
-        
-        this.time.addEvent({
-        
-            delay: config.powerUpSpawn,
-        
-            callback: function() {
-                
-                if (Phaser.Math.Between(0, 1) > 0.5) {
-                    
-                    var powerUp = new Power1(this, config.width, Phaser.Math.Between(5, config.height - 5));  
-                }
-                else {
-                    
-                    var powerUp = new Power2(this, config.width, Phaser.Math.Between(5, config.height - 5));
-                }
-                this.powerUp.add(powerUp);
-            },
-        
-            callbackScope: this,
-            loop: true
-            
-        });
 
     }
     
@@ -179,13 +153,6 @@ class playScene extends Phaser.Scene {
             
         });
     }
-    
-    pickUp (player, powerUp) {
-        
-        powerUp.destroy();
-        this.score += 50;
-        this.scoreText.setText("SCORE: " + this.score);
-    }
 
     resetPlayer() {
         
@@ -201,7 +168,7 @@ class playScene extends Phaser.Scene {
         
             targets: this.player,
             y: config.height - 64,
-            ease: 'power1',
+            ease: 'Power1',
             duration: 1500,
             repeat: 0,
             onComplete: function () {
