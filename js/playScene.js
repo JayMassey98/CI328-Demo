@@ -183,12 +183,13 @@ class playScene extends Phaser.Scene {
 
     hitEnemy(projectile, enemy) {
 
-        var explosion = new Explosion(this, enemy.x, enemy.y);
-
         projectile.destroy();
-        this.resetShipPos(enemy);
-        this.score += 15;
+        var explosion = new Explosion(this, enemy.x, enemy.y);
         this.explosionSound.play();
+        
+        this.resetShipPos(enemy);
+        this.score += 10;
+        this.scoreText.setText("SCORE: " + this.score);
         
     }
     
@@ -291,7 +292,6 @@ class playScene extends Phaser.Scene {
         if(this.life == 0) {
             
             this.scene.pause();
-            this.backgroundMusic.pause();
             this.scene.start("endScene");   
         }
 
