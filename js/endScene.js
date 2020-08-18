@@ -16,7 +16,7 @@ class endScene extends Phaser.Scene {
         
         this.restartButton.on("pointerup", function() { this.scene.start("menu"); }, this);
 
-        this.title = this.add.text(0, 0, "Game Over.", {
+        this.title = this.add.text(30, 30, "Game Over.", {
             fontFamily: 'monospace',
             fontSize: 40,
             fontStyle: 'bold',
@@ -26,9 +26,9 @@ class endScene extends Phaser.Scene {
         
         this.title.setOrigin(0, 0);
 
-        this.scoreText = this.add.text(config.width / 2 , 0, "SCORE: 0", {
+        this.scoreText = this.add.text(config.width / 2 - 105, 30, "SCORE: 0", {
             fontFamily: 'monospace',
-            fontSize: 24,
+            fontSize: 40,
             fontStyle: 'bold',
             color: '#ffffff',
             align: 'center'
