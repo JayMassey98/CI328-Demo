@@ -10,13 +10,13 @@ class options extends Phaser.Scene {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0, 0);
 
-        this.buttonBack = this.add.sprite(config.width / 2, config.height / 2, "buttonBack");
+        this.buttonBack = this.add.sprite(config.width / 2, config.height - 200, "buttonBack");
 
-        this.buttonAttackUp = this.add.sprite(config.width, config.height / 2, "buttonAttackUp");
-        this.buttonAttackDown = this.add.sprite(0, config.height / 2, "buttonAttackDown");
+        this.buttonAttackUp = this.add.sprite(config.width / 2, config.height - 750, "buttonAttackUp");
+        this.buttonAttackDown = this.add.sprite(0, config.height - 650, "buttonAttackDown");
 
-        this.buttonEnemyUp = this.add.sprite(config.width, config.height / 3, "buttonEnemyUp");
-        this.buttonEnemyDown = this.add.sprite(0, config.height / 3, "buttonEnemyDown");
+        this.buttonEnemyUp = this.add.sprite(config.width / 2, (config.height / 2) + 500, "buttonEnemyUp");
+        this.buttonEnemyDown = this.add.sprite(0, config.height - 400, "buttonEnemyDown");
 
         this.buttonBack.setInteractive();
         this.buttonAttackUp.setInteractive();
