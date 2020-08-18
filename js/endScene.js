@@ -26,16 +26,6 @@ class endScene extends Phaser.Scene {
         
         this.title.setOrigin(0, 0);
 
-        this.scoreText = this.add.text(config.width / 2 - 105, 30, "SCORE: 0", {
-            fontFamily: 'monospace',
-            fontSize: 40,
-            fontStyle: 'bold',
-            color: '#ffffff',
-            align: 'center'
-        });
-        
-        this.scoreText.setText("SCORE: " + this.score);
-
     }
 
 }
