@@ -15,7 +15,7 @@ class options extends Phaser.Scene {
         this.buttonAttackUp = this.add.sprite(config.width, config.height / 2, "buttonAttackUp");
         this.buttonAttackDown = this.add.sprite(0, config.height / 2, "buttonAttackDown");
 
-        this.buttonEnemyUp = this.add.sprite(config.width, config.height/3, "buttonEnemyUp");
+        this.buttonEnemyUp = this.add.sprite(config.width, config.height / 3, "buttonEnemyUp");
         this.buttonEnemyDown = this.add.sprite(0, config.height / 3, "buttonEnemyDown");
 
         this.buttonBack.setInteractive();
@@ -38,13 +38,13 @@ class options extends Phaser.Scene {
 
         // Start Game
         
-        this.backButton.on("pointerup", function() {this.scene.start("menu"); }, this);
+        this.buttonBack.on("pointerup", function() {this.scene.start("menu"); }, this);
 
         // Player Attacks
         
-        this.attackUp.on("pointerup", function() {config.bulletTime += 100; }, this);
+        this.buttonAttackUp.on("pointerup", function() {config.bulletTime += 100; }, this);
 
-        this.attackDown.on("pointerup", function() {
+        this.buttonAttackDown.on("pointerup", function() {
             
             if(config.bulletTime > 100) {
                 
@@ -55,9 +55,9 @@ class options extends Phaser.Scene {
 
         // Enemy Attacks
         
-        this.enemyUp.on("pointerup", function() {config.enemySpawn += 100; }, this);
+        this.buttonEnemyUp.on("pointerup", function() {config.enemySpawn += 100; }, this);
 
-        this.enemyDown.on("pointerup", function() {
+        this.buttonEnemyDown.on("pointerup", function() {
             
             if(config.enemySpawn > 100) {
                 
