@@ -141,11 +141,11 @@ class playScene extends Phaser.Scene {
                 
                 if (Phaser.Math.Between(0, 1) > 0.5) {
                     
-                    var powerUp = new power_1(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));  
+                    var powerUp = new Power1(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));  
                 }
                 else {
                     
-                    var powerUp = new power_2(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));
+                    var powerUp = new Power2(this, config.width, Phaser.Math.Between(5, this.game.config.height - 5));
                 }
                 this.powerUp.add(powerUp);
             },
@@ -350,7 +350,8 @@ class playScene extends Phaser.Scene {
             this.backgroundMusic.pause();
             this.scene.pause();
             this.scene.start("endScene");   
-        }   
+        }
+        
     }
     
 }
