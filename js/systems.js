@@ -42,9 +42,9 @@ class Power1 extends Phaser.GameObjects.Sprite {
     
     constructor(scene, x, y) {
         
-        super(scene, x, y, "power_1", "power_1");
+        super(scene, x, y, "Power1", "Power1");
         this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power_1");
+        this.play("Power1");
     }
 
     update() {
@@ -59,9 +59,9 @@ class Power2 extends Phaser.GameObjects.Sprite {
     
     constructor(scene, x, y) {
         
-        super(scene, x, y, "power_2", "power_2");
+        super(scene, x, y, "Power2", "Power2");
         this.body.velocity.x = Phaser.Math.Between(-50, -100);
-        this.play("power_2");
+        this.play("Power2");
     }
 
     update() {
