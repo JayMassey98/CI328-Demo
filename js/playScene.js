@@ -221,7 +221,7 @@ class playScene extends Phaser.Scene {
         
             targets: this.player,
             y: config.height - 64,
-            ease: 'Power1',
+            ease: 'power1',
             duration: 1500,
             repeat: 0,
             onComplete: function () {
