@@ -124,7 +124,9 @@ class playScene extends Phaser.Scene {
             
         });
         
-        // Power Ups
+         // Power Ups
+        
+        this.powerUp = this.add.group();
         
         this.time.addEvent({
         
