@@ -16,8 +16,8 @@ class menu extends Phaser.Scene {
         this.buttonPlay.setInteractive();
         this.buttonOptions.setInteractive();
         
-        this.buttonPlay.scale.setTo(2, 2);
-        this.buttonOptions.scale.setTo(2, 2);
+        this.buttonPlay.setScale(2, 2);
+        this.buttonOptions.setScale(2, 2);
 
         this.title = this.add.text(config.width / 2, 30, "Light Beam", {
             
