@@ -11,8 +11,9 @@ class bootScene extends Phaser.Scene {
         this.add.text(30, 30, "Loading Game...");
 
         this.load.image("background", "assets/images/background.png");
-        this.load.image("button", "assets/images/buttonPlay.png");
+        this.load.image("buttonPlay", "assets/images/buttonPlay.png");
         this.load.image("buttonRestart", "assets/images/buttonRestart.png");
+        this.load.image("buttonOptions", "assets/images/buttonOptions.png");
         
         //
         // Enemy Ship Sprites
