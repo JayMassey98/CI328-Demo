@@ -26,18 +26,6 @@ class options extends Phaser.Scene {
         
         this.buttonBack.setScale(2, 2);
         
-        this.title = this.add.text(config.width / 2, 30, "Options", {
-            
-            fontFamily: 'monospace',
-            fontSize: 40,
-            fontStyle: 'bold',
-            color: '#ffffff',
-            align: 'center'
-            
-        });
-        
-        this.title.setOrigin(0, 0);
-        
         this.buttonBack.on("pointerup", function() {this.scene.start("menu"); }, this);
         this.buttonAttackUp.on("pointerup", function() {config.bulletTime += 100; }, this);
         this.buttonEnemyUp.on("pointerup", function() {config.enemySpawn += 100; }, this);
