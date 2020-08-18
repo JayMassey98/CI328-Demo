@@ -2,12 +2,13 @@ var config = {
 
     type: Phaser.AUTO,
     width: 1920,
-    height: 937,
+    height: 969,
     backgroundColor: 0x000000,
-    scene: [bootScene, playScene],
+    scene: [bootScene, playScene, endScene, menu, options],
     physics: {default: "arcade"},
     pixelArt: true,
-    playerSpeed: 300
+    playerSpeed: 300,
+    powerUpSpawn: 7500
     
 }
 
