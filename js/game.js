@@ -8,7 +8,9 @@ var config = {
     physics: {default: "arcade"},
     pixelArt: true,
     playerSpeed: 300,
-    powerUpSpawn: 7500
+    powerUpSpawn: 7500,
+    enemySpawn: 1000,
+    bulletTime: 500
     
 }
 
