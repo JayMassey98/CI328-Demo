@@ -24,7 +24,9 @@ class options extends Phaser.Scene {
         this.buttonEnemyUp.setInteractive();
         this.buttonEnemyDown.setInteractive();
         
-        this.title = this.add.text(30, 30, "Options", {
+        this.buttonBack.scale.setTo(2, 2);
+        
+        this.title = this.add.text(config.width / 2, 30, "Options", {
             
             fontFamily: 'monospace',
             fontSize: 40,
@@ -35,14 +37,10 @@ class options extends Phaser.Scene {
         });
         
         this.title.setOrigin(0, 0);
-
-        // Start Game
         
         this.buttonBack.on("pointerup", function() {this.scene.start("menu"); }, this);
-
-        // Player Attacks
-        
         this.buttonAttackUp.on("pointerup", function() {config.bulletTime += 100; }, this);
+        this.buttonEnemyUp.on("pointerup", function() {config.enemySpawn += 100; }, this);
 
         this.buttonAttackDown.on("pointerup", function() {
             
@@ -52,10 +50,6 @@ class options extends Phaser.Scene {
             }
             
         }, this);
-
-        // Enemy Attacks
-        
-        this.buttonEnemyUp.on("pointerup", function() {config.enemySpawn += 100; }, this);
 
         this.buttonEnemyDown.on("pointerup", function() {
             
