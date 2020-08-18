@@ -12,7 +12,7 @@ class endScene extends Phaser.Scene {
         
         this.restartButton = this.add.sprite(config.width / 2, config.height / 2, "buttonRestart");
         this.restartButton.setInteractive();
-        this.restartButton.scale.setTo(2, 2);
+        this.restartButton.setScale(2, 2);
         
         this.restartButton.on("pointerup", function() { this.scene.start("menu"); }, this);
 
