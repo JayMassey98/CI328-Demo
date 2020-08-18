@@ -347,9 +347,9 @@ class playScene extends Phaser.Scene {
     noLives() {
         
         if(this.life == 0){
-            this.backgroundMusic.pause();
             this.scene.pause();
-            this.scene.start("endScene");   
+            this.backgroundMusic.pause();
+            this.scene.start("endScene");  
         }
         
     }
